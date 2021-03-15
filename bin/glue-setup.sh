@@ -20,7 +20,7 @@ mvn -f $ROOT_DIR/pom.xml -DoutputDirectory=$ROOT_DIR/jars dependency:copy-depend
 
 export SPARK_CONF_DIR=${ROOT_DIR}/conf
 mkdir $SPARK_CONF_DIR
-rm $SPARK_CONF_DIR/spark-defaults.conf
+rm -f $SPARK_CONF_DIR/spark-defaults.conf
 # Generate spark-defaults.conf
 echo "spark.driver.extraClassPath $GLUE_JARS_DIR/*" >> $SPARK_CONF_DIR/spark-defaults.conf
 echo "spark.executor.extraClassPath $GLUE_JARS_DIR/*" >> $SPARK_CONF_DIR/spark-defaults.conf
